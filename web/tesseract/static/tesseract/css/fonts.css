@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Unnamed';
+    src: url(../fonts/Fauna/Fauna-Regular.eot);
+    src: url(../fonts/Fauna/Fauna-Regular.eot) format('embedded-opentype'),
+        url(../fonts/Fauna/Fauna-Regular.woff2) format('woff2'),
+        url(../fonts/Fauna/Fauna-Regular.woff) format('woff'),
+        url(../fonts/Fauna/Fauna-Regular.ttf) format('truetype'),
+        url(../fonts/Fauna/Unnamed-Regular.svg#Unnamed-Regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+    /* font-display: swap; */
+}
+
+@font-face {
+    font-family: 'Fauna';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url(../fonts/Fauna/Fauna.ttf) format("truetype"),
+         url(../fonts/Fauna/Fauna.otf);
+}
+
+@font-face {
+    font-family: 'Geometria Light';
+    src: url('../fonts/Geometria/');
+    src: url('../fonts/Geometria/?#iefix') format('embedded-opentype'),
+    url('../fonts/Geometria/Geometria-Light.woff') format('woff'),
+    url('../fonts/Geometria/Geometria-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    }

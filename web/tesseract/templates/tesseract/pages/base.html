@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'tesseract/bootstrap/css/bootstrap-reboot.min.css'%}">
+    <link rel="stylesheet" href="{% static 'tesseract/bootstrap/css/bootstrap-grid.min.css'%}">
+    <link rel="stylesheet" href="{% static 'tesseract/css/fonts.css'%}">
+    <link rel="stylesheet" href="{% static 'tesseract/css/main_page.css'%}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% block headerlinks %}
+    <header>
+        <div class="container">
+            <nav>
+                <ui class="menu">
+                    <a href="{%url 'home'%}"><img src="{% static 'tesseract/svg/Full_logo_3.svg' %}" alt="logo"></a>
+                    {% for page in menu %}
+
+                    <li class="menu_item"><a href="{% url page.url_name %}" class="menu_link">{{page.category}}</a></li>
+
+                    {% endfor %}
+                </ui>
+            </nav>
+        </div>
+    </header>
+    {% endblock headerlinks%}
+    <div class="container">
+        <div class="main">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>
