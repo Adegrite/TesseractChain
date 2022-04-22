@@ -4,5 +4,5 @@ Tesseract Chain will be simplified Bitcoin based test chain. This is project for
 After MVP on btc techs i will try to rebuild it on Ethereum techs.
 
 # How it should looks?
-It will be a site with authorize mechanism where you can sign up and send some transactions at an early stage and... 
-some other stuff that i will come up with later ;)
+It will be a site with authorize mechanism where you can sign up and send some transactions at an early stage and
+some other stuff in future!
