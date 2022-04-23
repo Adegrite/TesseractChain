@@ -3,7 +3,6 @@ import os
 
 # from django.http import HttpResponse
 from django.shortcuts import render
-
 from .models import *
 
 menu = [
@@ -18,10 +17,10 @@ def get_start(request):
     return render(request, 'tesseract/get_start.html', {'menu': menu})
 
 def index(request):
-    users = User.objects.all()
+    # users = User.objects.all()
     context = {
         'menu': menu,
-        'users': users,
+        # 'users': users,
         'title': 'Main'
     }
     return render(request, 'tesseract/pages/index.html', context=context)

@@ -2,7 +2,7 @@ import hashlib
 import hmac
 from io import BytesIO
 
-from programmingbitcoin.my_attempts.core.source import hash160, encode_base58_checksum
+from source import hash160, encode_base58_checksum
 
 
 class FieldElement:
@@ -215,10 +215,6 @@ class S256Point(Point):
         else:
             return S256Point(x, odd_beta)
 
-    # def hash256(s):
-    #     '''two rounds of sha256'''
-    #     return hashlib.sha256(hashlib.sha256(s).digest()).digest()
-
 
 class Signature:
     def __init__(self, r, s):
@@ -318,62 +314,4 @@ class PrivateKey:
 G = S256Point(
     0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798,
     0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8)
-
-
-
-# ch 4 ex 1    SEC serialized(65b) and hexed Public Key
-# private = PrivateKey(5000)
-# print(private.point.sec().hex())
-# private = PrivateKey(2018**5)
-# print(private.point.sec().hex())
-# private = PrivateKey(0xdeadbeef12345)
-# print(private.point.sec().hex())
-# end ex 1
-
-# ex 2          compressed SEC serialized(33b) and hexed Public Key
-# private = PrivateKey(5001)
-# print(private.point.sec(compressed=True).hex())
-# private = PrivateKey(2019**5)
-# print(private.point.sec(compressed=True).hex())
-# private = PrivateKey(0xdeadbeef54321)
-# print(private.point.sec(compressed=True).hex())
-# end ex2
-
-# ex3           hexed DER format for signature
-# sig = Signature(r=0x37206a0610995c58074999cb9767b87af4c4978db68c06e8e6e81d282047a7c6,
-#               s=0x8ca63759c1157ebeaec0d03cecca119fc9a75bf8e6d0fa65c841c8e2738cdaec)
-# print(sig.der().hex())
-# end ex 3
-
-# ex4           Base58 encoded hash in bytes
-# h = '7c076ff316692a3d7eb3c3bb0f8b1488cf72e1afcd929e29307032997a838a3d'
-# print(encode_base58(bytes.fromhex(h)))
-# end ex4
-
-# ex5           compressed\non-compressed Public Key address in\not in testnet
-# private = PrivateKey(5000)
-# print(private.point.address(compressed=False, testnet=True))
-# private = PrivateKey(2020**5)
-# print(private.point.address(compressed=True, testnet=True))
-# private = PrivateKey(0x12345deadbeef)
-# print(private.point.address(compressed=True, testnet=False))
-# end ex5
-
-# ex6           wif converted(like SEC serialize, but for secret key) secret key
-# secret = PrivateKey(5003)
-# print(secret.wif(compressed=True, testnet=True))
-# secret = PrivateKey(2021*5)
-# print(secret.wif(compressed=False, testnet=True))
-# secret = PrivateKey(0x54321deadbeef)
-# print(secret.wif(compressed=True, testnet=False))
-# end ex6
-
-# ex7           encoded secret phrase for create address in testnet
-# secret_pharase = b"I'm will build it and it could be written in history!"
-# int_sp = little_endian_to_int(hash256(secret_pharase))
-# pk = PrivateKey(int_sp)
-# print(pk.point.address(testnet=True))
-# end ex7
-
-# ch5 ex1
 

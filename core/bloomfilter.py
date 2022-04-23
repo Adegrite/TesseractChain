@@ -27,6 +27,7 @@ class BloomFilter:
         result += int_to_little_endian(flag, 1)
         return GenericMessage(b'filterload', result)
 
+
 filter = BloomFilter(10, 5, tweak=99)
 for phrase in (b'Hello World', b'Goodbye!'):
     for i in range(filter.functions_count):
@@ -35,4 +36,3 @@ for phrase in (b'Hello World', b'Goodbye!'):
         bit = h % (filter.size * 8)
         filter.bit_field[bit] = 1
 print(bit_field_to_bytes(filter.bit_field).hex())
-

@@ -1,7 +1,7 @@
 from io import BytesIO
 from logging import getLogger
 
-from programmingbitcoin.my_attempts.core.source import (
+from source import (
     encode_varint,
     h160_to_p2pkh_address,
     h160_to_p2sh_address,
@@ -10,7 +10,7 @@ from programmingbitcoin.my_attempts.core.source import (
     read_varint,
     sha256,
 )
-from programmingbitcoin.my_attempts.core.op import (
+from op import (
     op_equal,
     op_hash160,
     op_verify,

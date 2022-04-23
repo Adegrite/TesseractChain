@@ -3,7 +3,7 @@ from io import BytesIO
 import json
 import requests
 
-from programmingbitcoin.my_attempts.core.source import (
+from source import (
     encode_varint,
     hash256,
     int_to_little_endian,
@@ -11,7 +11,7 @@ from programmingbitcoin.my_attempts.core.source import (
     read_varint,
     SIGHASH_ALL,
 )
-from programmingbitcoin.my_attempts.core.script import p2pkh_script, Script
+from script import p2pkh_script, Script
 
 
 class Tx:

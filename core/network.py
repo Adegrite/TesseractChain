@@ -2,8 +2,8 @@ import time
 from random import randint
 import socket
 
-from programmingbitcoin.my_attempts.core.block import Block
-from programmingbitcoin.my_attempts.core.source import int_to_little_endian, little_endian_to_int, hash256, encode_varint, \
+from block import Block
+from source import int_to_little_endian, little_endian_to_int, hash256, encode_varint, \
     read_varint
 
 NETWORK_MAGIC = b'\xf9\xbe\xb4\xd9'

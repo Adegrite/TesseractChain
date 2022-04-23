@@ -1,4 +1,4 @@
-from programmingbitcoin.my_attempts.core.source import little_endian_to_int, int_to_little_endian, hash256, \
+from source import little_endian_to_int, int_to_little_endian, hash256, \
     bits_to_target, merkle_root
 
 GENESIS_BLOCK = bytes.fromhex(
@@ -68,26 +68,4 @@ class Block:
         return root[::-1] == self.merkle_root
 
 
-# # ch9 ex12
-# block1_hex = '000000203471101bbda3fe307664b3283a9ef0e97d9a38a7eacd88000000\
-# 00000000000010c8aba8479bbaa5e0848152fd3c2289ca50e1c3e58c9a4faaafbdf5803c5448dd\
-# b845597e8b0118e43a81d3'
-# block2_hex = '02000020f1472d9db4b563c35f97c428ac903f23b7fc055d1cfc26000000\
-# 000000000000b3f449fcbe1bc4cfbcb8283a0d2c037f961a3fdf2b8bedc144973735eea707e126\
-# 4258597e8b0118e5f00474'
-#
-# # target_to_bits()
-# first_block = Block.parse(BytesIO(bytes.fromhex(block1_hex)))
-# last_block = Block.parse(BytesIO(bytes.fromhex(block2_hex)))
-# time_dif = last_block.timestamp - first_block.timestamp
-# if time_dif > TWO_WEEKS * 4:
-#     time_dif = TWO_WEEKS * 4
-# if time_dif < TWO_WEEKS // 4:
-#     time_dif = TWO_WEEKS // 4
-#
-# new_target = last_block.target() * time_dif // TWO_WEEKS
-# new_bits = target_to_bits(new_target)
-# print(new_bits.hex())
-#
-# stream = BytesIO(TESTNET_GENESIS_BLOCK)
-# print(var_dump(Block.parse(stream)))
+
